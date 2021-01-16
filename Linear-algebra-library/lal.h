@@ -12,7 +12,7 @@ class Matris{
 		int rows;
 		int cols;
 	Matris(double *, int,int);
-	~Matris(){};
+	~Matris();
 	void print(void);
 	Matris operator+(Matris);
 	Matris operator-(Matris);
@@ -26,9 +26,8 @@ class Vektor: public Matris{
 
 	public:
 	double norm;
-	 
-	 Vektor(double *, int,int): Matris(entries,rows,cols){};
-	 ~Vektor(){};
+	 Vektor(double *, int,int);
+	 ~Vektor();
 	 void print(void);
 	 };
 	 
