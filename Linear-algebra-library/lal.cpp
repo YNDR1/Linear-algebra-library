@@ -4,9 +4,6 @@
 
 class Matris{
 
-		
-	
-	
 	public:
 		double *entries;
 		int rows;
@@ -30,7 +27,7 @@ class Matris{
 	}
 	
 
-	Matris operator+(Matris m){
+	Matris::operator+(Matris m){
 		int i,j;
 		for(i = 0; i < m.rows; i++){
 			for(j = 0; j < m.cols; j++){
@@ -39,9 +36,33 @@ class Matris{
 			}
 		}
 	}
-	Matris operator-(Matris);
-	Matris operator*(Matris);
-	Matris operator==(Matris);
+	Matris::operator-(Matris m){
+			int i,j;
+		for(i = 0; i < m.rows; i++){
+			for(j = 0; j < m.cols; j++){
+				rows -= m[i][j];
+				cols -= m[i][j];
+			}
+		}
+	}
+	Matris::operator*(Matris m){
+	    int i,j;
+		for(i = 0; i < m.rows; i++){
+			for(j = 0; j < m.cols; j++){
+				rows *= m[i][j];
+				cols *= m[i][j];
+			}
+		}
+	}
+	Matris::operator==(Matris m){
+		int i,j;
+		for(i = 0; i < m.rows; i++){
+			for(j = 0; j < m.cols; j++){
+				rows += m[i][j];
+				cols += m[i][j];
+			}
+		}
+	}
 	
 	
 	
@@ -51,21 +72,16 @@ class Vektor: public Matris{
 	
 	public:
 		double norm;
-	 Vektor(double *, int){};
-     void setnorm(){
-     	int i; 
-		 for(i = 0; i<col; i++){
-		 	this.norm +=  
-		 }
-     	this->norm = this.
-	 }
-	 
+	 Vektor(double *d, int rows): Matris{d,rows};
+     
+     
 	 ~Vektor(){};
 	 void print(void){
-	 	
-	 }
-	 }
-	 
+	 	int i;
+	 	for(i = 0; i < rows; i++){
+	 		cout << (d[i]) << endl;
+		 }
+	 }	 
 };
 void matrisDoldur(Matris *m){
 	int i, j;
@@ -75,4 +91,3 @@ void matrisDoldur(Matris *m){
 		}
 	}
 };
-
