@@ -55,13 +55,7 @@ class Matris{
 		}
 	}
 	Matris::operator==(Matris m){
-		int i,j;
-		for(i = 0; i < m.rows; i++){
-			for(j = 0; j < m.cols; j++){
-				rows += m[i][j];
-				cols += m[i][j];
-			}
-		}
+		
 	}
 	
 	
