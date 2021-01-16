@@ -1,9 +1,26 @@
 #include "lal.h"
+#include<iostream>
+#include "math.h"
 
+
+
+using namespace std;
 int main(){
-    double *a ;
-	Matris *m = new Matris(a,5,5);
-//	matrisDoldur(m);
-	
-	
+double boyut = 0;
+int row;
+int col;
+cout << "Tek boyutlu matris için boyut giriniz" << endl;
+cin>> boyut;
+cout<< "Matrisin satir sayisini giriniz : " << endl;
+cin>> row;
+cout<< "Matrisin sutun sayisini giriniz : " << endl;
+    cin>> col;
+
+double *entries;
+entries = &boyut;
+Matris *m  = new Matris();
+
+//matrisDoldur(m);
+
+
 }
