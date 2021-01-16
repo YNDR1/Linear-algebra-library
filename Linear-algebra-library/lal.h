@@ -1,37 +1,40 @@
-#define lal_h_
+#define LAL_H
 #include <iostream>
-
+#include "math.h"
 using namespace std;
 
-
-
 class Matris{
-	
-	public:
-		double *entries;
-		int rows;
-		int cols;
-	Matris(double *, int,int);
-	~Matris();
-	void print(void);
-	Matris operator+(Matris);
-	Matris operator-(Matris);
-	Matris operator*(Matris);
-	Matris operator==(Matris);
-	
-	};
+
+private:
+double *entries;
+int rows;
+int cols;
+
+public:
+Matris(double *, int,int);
+~Matris();
+void getEntries(void);
+void getRows(void);
+void getCols(void);
+void print(void);
+// Matris operator+(Matris *);
+// Matris operator-(Matris *);
+// Matris operator*(Matris *);
+// Matris operator==(Matris *);
+
+};
 
 
 class Vektor: public Matris{
+     
+private:
+     double norm;
 
-	public:
-	double norm;
-	 Vektor(double *, int,int);
-	 ~Vektor();
-	 void print(void);
-	 };
-	 
+public:
+Vektor(double *,int);
+~Vektor();
+void print(void);
+};
 
-void matrisDoldur(Matris *);
 
- 
+//void matrisDoldur(Matris *);
