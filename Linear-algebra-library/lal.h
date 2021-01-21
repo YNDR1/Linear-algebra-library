@@ -1,6 +1,8 @@
 #define LAL_H
 #include <iostream>
 #include "math.h"
+#include<stdbool.h>
+
 using namespace std;
 
 class Matris{
@@ -13,28 +15,59 @@ int cols;
 public:
 Matris(double *, int,int);
 ~Matris();
-void getEntries(void);
-void getRows(void);
-void getCols(void);
+double *getEntries();
+int getRows();
+int getCols();
 void print(void);
-// Matris operator+(Matris *);
-// Matris operator-(Matris *);
-// Matris operator*(Matris *);
-// Matris operator==(Matris *);
+void matrisDoldur(int);
 
+ Matris transpoze();
+ 
+ 
+ Matris operator+(const Matris& m){
+ int i; 
+ double *entries = (double *)malloc((this->rows * this->cols) * sizeof(double));
+ for(i = 0; i<this->rows * this->cols; i++){
+ entries[i] = this->entries[i] + m.entries[i]; 
+ }
+  return Matris(entries,this->rows,this->cols);
+ }
+ 
+ 
+ Matris operator-(const Matris& m){
+ int i; 
+ double *entries = (double *)malloc((this->rows * this->cols) * sizeof(double));
+ for(i = 0; i<this->rows * this->cols; i++){
+ entries[i] = this->entries[i] - m.entries[i]; 
+ }
+ return Matris(entries,this->rows,this->cols);
+ }
+ 
+ 
+ Matris operator*(const Matris& m){
+ int i; 
+ double *entries = (double *)malloc((this->rows * this->cols) * sizeof(double));
+ for(i = 0; i<this->rows * this->cols; i++){
+ entries[i] = this->entries[i] * m.entries[i]; 
+ }
+  return Matris(entries,this->rows,this->cols);
+ }
+ 
+ 
+ double* operator==(const Matris &);
+ 
 };
 
 
-class Vektor: public Matris{
+class Vector: public Matris{
      
 private:
      double norm;
 
 public:
-Vektor(double *,int);
-~Vektor();
+Vector(double *,int);
+~Vector();
 void print(void);
 };
 
 
-//void matrisDoldur(Matris *);
